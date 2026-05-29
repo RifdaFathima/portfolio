@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fathima Rifda | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FDFBF7;
+      --text: #111111;
+      --border: 3px solid #111111;
+      --shadow: 6px 6px 0px #111111;
+      --shadow-hover: 2px 2px 0px #111111;
+
+      --yellow: #FFD166;
+      --pink: #EF476F;
+      --teal: #06D6A0;
+      --blue: #118AB2;
+      --lilac: #C8B6FF;
+      --orange: #F77F00;
+      --white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Space Grotesk', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: radial-gradient(var(--text) 1px, transparent 0);
+      background-size: 20px 20px;
+      background-position: -19px -19px;
+      cursor: crosshair;
+    }
+
+    .container {
+      width: min(1000px, 92%);
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    nav {
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+      background: var(--white);
+      border: var(--border);
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      box-shadow: var(--shadow);
+      margin: 20px auto 40px;
+      width: min(1000px, 92%);
+      justify-content: center;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 5px 10px;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    nav a:hover {
+      background: var(--yellow);
+      border: 2px solid var(--text);
+    }
+
+    h1 {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: inline-block;
+      background: var(--yellow);
+      padding: 5px 20px;
+      border: var(--border);
+      box-shadow: 4px 4px 0px var(--text);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--white);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      transition: all 0.1s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .brutal-card:hover {
+      transform: translate(4px, 4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-primary {
+      background: var(--pink);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: var(--teal);
+    }
+
+    .brutal-card {
+      background: var(--white);
+      border: var(--border);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      transition: all 0.1s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .brutal-card.bg-yellow {
+      background: var(--yellow);
+    }
+
+    .brutal-card.bg-lilac {
+      background: var(--lilac);
+    }
+
+    .brutal-card.bg-blue {
+      background: var(--blue);
+      color: white;
+    }
+
+    .brutal-card.bg-orange {
+      background: var(--orange);
+    }
+
+    .brutal-card.bg-teal {
+      background: var(--teal);
+    }
+
+    .brutal-card.bg-pink {
+      background: var(--pink);
+      color: white;
+    }
+
+    .tag-container {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .tag {
+      background: var(--white);
+      border: 2px solid var(--text);
+      color: var(--text);
+      padding: 4px 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      box-shadow: 2px 2px 0px var(--text);
+    }
+
+    section {
+      padding: 80px 0;
+      border-bottom: var(--border);
+    }
+
+    .hero-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      border-bottom: var(--border);
+      background: var(--bg);
+      padding: 40px 0;
+      position: relative;
+    }
+
+    .grid {
+      display: grid;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .ticker-wrap {
+      width: 100%;
+      overflow: hidden;
+      background-color: var(--text);
+      color: var(--yellow);
+      padding: 10px 0;
+      border-bottom: var(--border);
+      border-top: var(--border);
+    }
+
+    .ticker {
+      display: inline-block;
+      white-space: nowrap;
+      padding-right: 100%;
+      animation: ticker 20s linear infinite;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    @keyframes ticker {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      100% {
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
+
+    footer {
+      background: var(--pink);
+      padding: 40px 0;
+      text-align: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-top: var(--border);
+    }
+
+    .spin-star {
+      display: inline-block;
+      animation: spin 6s linear infinite;
+      color: var(--pink);
+    }
+
+    .spin-star-reverse {
+      display: inline-block;
+      animation: spin 8s linear infinite reverse;
+      color: var(--teal);
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .highlight {
+      background: var(--yellow);
+      display: inline;
+      padding: 0 4px;
+      box-shadow: 2px 2px 0px var(--text);
+      border: 2px solid var(--text);
+    }
+
+    .floating-badge {
+      position: absolute;
+      right: 0%;
+      top: 0px;
+      width: 140px;
+      height: 140px;
+      animation: spin 15s linear infinite;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+      }
+
+      h1 {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#experience">EXPERIENCE</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <section id="home" class="hero-section">
+    <div class="container" style="position: relative;">
+      <svg class="floating-badge" viewBox="0 0 100 100">
+        <defs>
+          <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+        </defs>
+        <circle cx="50" cy="50" r="48" fill="var(--lilac)" stroke="var(--text)" stroke-width="3" />
+        <text font-size="11.5" font-weight="700" fill="var(--text)" letter-spacing="2">
+          <textPath href="#circlePath"> ✦ ALWAYS LEARNING ✦ </textPath>
+        </text>
+        <polygon points="50,30 54,46 70,50 54,54 50,70 46,54 30,50 46,46" fill="var(--white)" stroke="var(--text)" stroke-width="2" />
+      </svg>
+
+      <div style="max-width: 900px; position: relative; z-index: 2;">
+        <div style="display: inline-block; border: var(--border); padding: 5px 15px; background: var(--lilac); font-weight: 700; box-shadow: 4px 4px 0px var(--text); margin-bottom: 20px; font-size: 1.2rem;">
+          STATUS: ACTIVE & READY
+        </div>
+
+        <h1>HELLO, I'M FATHIMA RIFDA. <span class="spin-star">✦</span></h1>
+
+        <div class="brutal-card bg-yellow" style="display: inline-block; padding: 15px 25px; margin-bottom: 20px;">
+          <p style="margin: 0; font-size: 1.5rem; font-weight: 700;">CSE UNDERGRADUATE / <span class="highlight">LEADER</span> / BUILDER</p>
+        </div>
+
+        <p style="font-size: 1.4rem; max-width: 800px; background: var(--white); padding: 20px; border: var(--border); box-shadow: var(--shadow);">
+          I enjoy building technology-driven solutions, working with teams, and contributing to meaningful projects with
+          <span class="highlight" style="background: var(--pink); color: white;">real-world impact</span>.
+          <span class="spin-star-reverse" style="font-size: 1.8rem; vertical-align: middle;">✧</span>
+        </p>
+
+        <div class="btn-group">
+          <a href="#projects" class="btn btn-primary">VIEW PROJECTS 🚀</a>
+          <a href="assets/resume/CVrifda.pdf" target="_blank" class="btn btn-secondary">RESUME.PDF 📄</a>
+          <a href="https://www.linkedin.com/in/fathima-rifda-170486304" target="_blank" class="btn" style="background: var(--blue); color: white;">LINKEDIN 🔗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker-wrap">
+    <div class="ticker">
+      ✦ OPEN TO OPPORTUNITIES ✦ SOFTWARE DEV ✦ INTELLIGENT SYSTEMS ✦ COMMUNITY BUILDING ✦ OPEN TO OPPORTUNITIES ✦
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="container">
+      <h2 style="background: var(--pink); color: white;">CORE IDENTITY</h2>
+
+      <div class="brutal-card" style="margin-top: 30px; font-size: 1.3rem;">
+        <p>I am a Computer Science and Engineering undergraduate student with strong organizational, communication, and problem-solving skills.</p>
+        <p>Through active involvement in projects, hackathons, institutional initiatives, and student leadership, I have developed a growing foundation in software development, databases, and intelligent systems.</p>
+        <p style="margin: 0; font-weight: 700; color: var(--pink);">
+          I enjoy taking initiative, managing responsibilities, and creating work that blends innovation with practical value.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="background: var(--lilac);">
+    <div class="container">
+      <h2>TECH STACK</h2>
+
+      <div class="grid grid-4">
+        <div class="brutal-card" style="text-align: center; font-size: 1.2rem; font-weight: 700;">C</div>
+        <div class="brutal-card bg-yellow" style="text-align: center; font-size: 1.2rem; font-weight: 700;">JAVA</div>
+        <div class="brutal-card" style="text-align: center; font-size: 1.2rem; font-weight: 700;">JAVASCRIPT</div>
+        <div class="brutal-card bg-teal" style="text-align: center; font-size: 1.2rem; font-weight: 700;">PYTHON</div>
+        <div class="brutal-card" style="text-align: center; font-size: 1.2rem; font-weight: 700;">MYSQL</div>
+        <div class="brutal-card bg-orange" style="text-align: center; font-size: 1.2rem; font-weight: 700;">HTML / CSS</div>
+        <div class="brutal-card" style="text-align: center; font-size: 1.2rem; font-weight: 700;">GITHUB</div>
+        <div class="brutal-card bg-pink" style="text-align: center; font-size: 1.2rem; font-weight: 700;">LEADERSHIP</div>
+        <div class="brutal-card bg-lilac" style="text-align: center; font-size: 1.2rem; font-weight: 700;">TEAM COLLAB</div>
+        <div class="brutal-card" style="text-align: center; font-size: 1.2rem; font-weight: 700;">PROBLEM SOLVING</div>
+        <div class="brutal-card bg-yellow" style="text-align: center; font-size: 1.2rem; font-weight: 700;">CONTENT CREATION</div>
+        <div class="brutal-card bg-teal" style="text-align: center; font-size: 1.2rem; font-weight: 700;">MARKETING</div>
+        <div class="brutal-card" style="text-align: center; font-size: 1.2rem; font-weight: 700;">COMMUNICATION</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 style="background: var(--teal);">OUTPUT MODULES</h2>
+
+      <div class="grid grid-3">
+        <div class="brutal-card bg-yellow">
+          <h3>SHUCHITHWA EYE</h3>
+          <p>A smart city initiative for the Trivandrum Municipal Corporation, solving civic issues using a tech-driven approach.</p>
+          <div class="tag-container">
+            <span class="tag">Smart City</span>
+            <span class="tag">Innovation</span>
+          </div>
+        </div>
+
+        <div class="brutal-card">
+          <h3>EXAM RESULT ANALYSIS</h3>
+          <p>Pre-final year academic project to analyze examination results and extract actionable academic insights.</p>
+          <div class="tag-container">
+            <span class="tag">Data</span>
+            <span class="tag">Analysis</span>
+          </div>
+        </div>
+
+        <div class="brutal-card bg-lilac">
+          <h3>COMPUTER VISION</h3>
+          <p>Completed an intensive 5-day workshop on Advanced Computer Vision at IIIT Kottayam.</p>
+          <div class="tag-container">
+            <span class="tag">Workshop</span>
+            <span class="tag">AI</span>
+          </div>
+        </div>
+
+        <div class="brutal-card bg-blue">
+          <h3>BISAG-N EXPOSURE</h3>
+          <p>Industrial visit to BISAG-N, Ahmedabad, Gujarat to gain exposure to real-world technological applications.</p>
+          <div class="tag-container">
+            <span class="tag">Industrial</span>
+          </div>
+        </div>
+
+        <div class="brutal-card">
+          <h3>MULEARN INTERN</h3>
+          <p>Worked as an intern under the Mulearn GTech initiative, engaging in community and tech-driven work.</p>
+          <div class="tag-container">
+            <span class="tag">Community</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" style="background: var(--white);">
+    <div class="container">
+
+      <div class="grid grid-2">
+
+        <div>
+          <h2 style="background: var(--orange);">LEADERSHIP</h2>
+
+          <div class="grid" style="gap: 20px; margin-top: 20px;">
+            <div class="brutal-card">
+              <h3>CHAIRPERSON, COLLEGE UNION</h3>
+              <p>Serving as Chairperson 2026 (Present).</p>
+            </div>
+
+            <div class="brutal-card bg-yellow">
+              <h3>CHAIRPERSON, IEEE CS</h3>
+              <p>Leading technical initiatives under IEEE Computer Society (2025-2026).</p>
+            </div>
+
+            <div class="brutal-card">
+              <h3>OPERATIONS LEAD, IEDC</h3>
+              <p>Operations lead, Innovation and Entrepreneurship Development Centre (2024-2025).</p>
+            </div>
+
+            <div class="brutal-card bg-teal">
+              <h3>OPERATIONS LEAD, MULEARN</h3>
+              <p>Operations lead, Mulearn (2025).</p>
+            </div>
+
+            <div class="brutal-card bg-pink">
+              <h3 style="color: white;">VOLUNTEER SECRETARY, NSS</h3>
+              <p style="color: white;">Volunteer Secretary, National Service Scheme (2024-2026).</p>
+            </div>
+
+            <div class="brutal-card">
+              <h3>EXECOM MEMBER, IEEE PES</h3>
+              <p>Execom member, IEEE PES (2024-2025).</p>
+            </div>
+
+            <div class="brutal-card bg-lilac">
+              <h3>CORE MEMBER, OPENMIND</h3>
+              <p>Core member of Openmind, Makerspace at ASAP Kasaragod (2025).</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="background: var(--blue); color: white;">MILESTONES</h2>
+
+          <div class="grid" style="gap: 20px; margin-top: 20px;">
+            <div class="brutal-card">
+              <h3>KERALA REPRESENTATIVE</h3>
+              <p>Kerala Representative of National Integration Camp held at HIMS Karnataka 2026.</p>
+            </div>
+
+            <div class="brutal-card bg-pink">
+              <h3 style="color: white;">STATE FINALIST</h3>
+              <p style="color: white;">State Finalist of Viksith Bharath Youth Parliament in 2024 and 2025.</p>
+            </div>
+
+            <div class="brutal-card bg-teal">
+              <h3>IDEA FEST</h3>
+              <p>Won first prize in the state-level Idea Fest conducted by ASAP Community Skill Park.</p>
+            </div>
+
+            <div class="brutal-card bg-lilac">
+              <h3>MYOSA DEVELOPMENT KITS</h3>
+              <p>Received the MYOSA development kits from the IEEE Sensors Council as part of the MYOSA Event.</p>
+            </div>
+
+            <div class="brutal-card">
+              <h3>"WOMEN OF WISDOM" TECH TALK</h3>
+              <p>Organized Tech Talk in collaboration with IEEE PES Kerala Chapter and IEEE Women in Power Kerala.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2 style="background: var(--yellow);">TRAINING DATA</h2>
+
+      <div class="grid grid-3">
+        <div class="brutal-card">
+          <div style="background: var(--pink); color: white; padding: 5px 10px; display: inline-block; font-weight: 700; border: var(--border); box-shadow: 2px 2px 0px var(--text); margin-bottom: 15px;">
+            CURRENT
+          </div>
+          <h3>B.TECH IN CSE</h3>
+          <p>Undergraduate Student in Computer Science and Engineering.</p>
+        </div>
+
+        <div class="brutal-card">
+          <div style="background: var(--white); padding: 5px 10px; display: inline-block; font-weight: 700; border: var(--border); box-shadow: 2px 2px 0px var(--text); margin-bottom: 15px;">
+            2021 - 2023
+          </div>
+          <h3>G.M.V.H.S.S THALANGARA</h3>
+          <p>XI - XII Biology Science</p>
+          <p style="font-weight: 700; font-size: 1.2rem;">SCORE: 97.5%</p>
+        </div>
+
+        <div class="brutal-card bg-teal">
+          <div style="background: var(--white); padding: 5px 10px; display: inline-block; font-weight: 700; border: var(--border); box-shadow: 2px 2px 0px var(--text); margin-bottom: 15px;">
+            2021
+          </div>
+          <h3>D.E.M.H.S THALANGARA</h3>
+          <p>10th Board</p>
+          <p style="font-weight: 700; font-size: 1.2rem;">SCORE: FULL A+</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background: var(--blue); color: white; border-bottom: none;">
+    <div class="container" style="text-align: center;">
+      <h2 style="background: var(--white); color: var(--text);">OPEN CONNECTION</h2>
+
+      <div class="brutal-card" style="max-width: 600px; margin: 40px auto; color: var(--text);">
+        <h3 style="font-size: 2rem;">LET'S COLLAB!</h3>
+        <p style="font-size: 1.2rem;">Ready to build something awesome? Send a ping.</p>
+
+        <div class="btn-group" style="justify-content: center;">
+          <a href="mailto:rifdafathima24@gmail.com" class="btn btn-primary">EMAIL ME ✉️</a>
+          <a href="https://www.linkedin.com/in/fathima-rifda-170486304" target="_blank" class="btn btn-secondary">LINKEDIN 🤝</a>
+        </div>
+
+        <hr style="border: 1px solid var(--text); margin: 20px 0;">
+
+        <p style="font-weight: 700; font-size: 1.2rem; margin-bottom: 5px;">PHONE: +91 8921256980</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="margin: 0;">THANKS FOR CHECKING OUT. FATHIMA RIFDA © 2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>
